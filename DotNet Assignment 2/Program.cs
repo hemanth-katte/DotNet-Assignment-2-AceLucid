@@ -24,11 +24,12 @@ namespace DotNet_Assignment_2
 
 		static string DateExtractor(string date)
 		{
+			//regex expression for finding out date format(MMDDYYYY)
 			string pattern = @"(0[1-9]|1[0-2])(0[1-9]|1\d|2[0-9]|3[01])(\d{4})";
 			Regex regex = new Regex(pattern);
 
 			string validDate = null;
-			Match match = regex.Match(date);
+			Match match = regex.Match(date); //checks if regex pattern can be found in the given string 
 
 			if (match.Success)
 			{
